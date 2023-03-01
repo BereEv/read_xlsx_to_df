@@ -2,7 +2,7 @@ import glob
 
 import openpyxl
 import pandas as pd
-import time
+
 
 class Empty():
 
@@ -68,8 +68,6 @@ class Empty():
             else:
                 data_lst = (ls for ls in lst[strt:])
 
-            #data_lst = tuple(data_lst)
-
             dd = pd.DataFrame(columns=column, data=data_lst)
 
             df = pd.concat([df, dd])
@@ -77,11 +75,5 @@ class Empty():
             #df = df.fillna(0)
             df = df.rename(columns=lambda x: str(x).strip())
             
-        #if self.file_part != '':
-         #   df.to_excel(f'log/{self.file_part}.xlsx')
-        #else:
-         #   df.to_excel(f'log/{self.dir_in}.xlsx')
-        print(f'Файл {self.dir_in, self.file_part} прочитан')
-        stop = time.time()
-        print(stop - start)
+        print(f'Файлы {self.dir_in} из папки {self.file_part} прочитаны')
         yield df
