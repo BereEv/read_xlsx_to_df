@@ -5,7 +5,7 @@ import pandas as pd
 
 
 class Empty():
-
+    
     dir_in = ''
     num_sheets = 0
     noms = 0
@@ -13,7 +13,7 @@ class Empty():
     file_part = ''
 
     def read_con(self):
-        start = time.time()
+        
         files = glob.glob(f'{self.dir_in}/{self.file_part}*')
         df = pd.DataFrame()
         for file in files:
